@@ -1,0 +1,29 @@
+spring:
+  profiles: dev
+  # 开发阶段使用本地数据库
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/practice?useUnicode=true&characterEncoding=utf-8
+    username: root
+    password: yuning369
+
+
+# mybatis-plus
+mybatis-plus:
+  mapper-locations: classpath:mybatis/mapper/**/*.xml
+  #  type-aliases-package: com.zoomlgd.users.modules.system.entity
+  configuration:
+    map-underscore-to-camel-case: true
+    cache-enabled: false
+    jdbc-type-for-null: NULL
+
+
+
+# log
+logging:
+  config: classpath:logback-spring.xml
+  path: /var/tmp/logs
+  level:
+    root: INFO
+    console: DEBUG
